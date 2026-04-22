@@ -353,6 +353,22 @@
   .card-pocketsono .work-card-bg {
     background: linear-gradient(135deg, #0a1628 0%, #0d2040 50%, #061020 100%);
   }
+  .card-blade .work-card-bg {
+    background: linear-gradient(135deg, #0e0c08 0%, #1c1608 50%, #12100a 100%);
+  }
+  .card-grounds .work-card-bg {
+    background: linear-gradient(135deg, #1e1209 0%, #2e1d0e 50%, #1a1008 100%);
+  }
+  .card-nova .work-card-bg {
+    background: linear-gradient(135deg, #0d1520 0%, #162436 50%, #0a111a 100%);
+  }
+  .card-apex .work-card-bg {
+    background: linear-gradient(135deg, #1a0800 0%, #2e0f00 50%, #1a0800 100%);
+  }
+  .card-blade .card-pattern svg { opacity: 0.12; }
+  .card-grounds .card-pattern svg { opacity: 0.12; }
+  .card-nova .card-pattern svg { opacity: 0.1; }
+  .card-apex .card-pattern svg { opacity: 0.12; }
   .card-pattern {
     position: absolute; inset: 0;
     display: flex; align-items: center; justify-content: center;
@@ -512,6 +528,186 @@
     border: 1px solid rgba(255,255,255,0.1);
     padding: 0.25rem 0.6rem;
     border-radius: 1px;
+  }
+
+  /* ── PROCESS ── */
+  #process {
+    background: var(--ink);
+    padding: 7rem 4rem;
+    overflow: hidden;
+  }
+  #process h2 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 4rem;
+    max-width: 640px;
+  }
+  #process h2 em { font-style: italic; color: rgba(255,255,255,0.4); }
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .process-step {
+    background: var(--ink);
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+  .process-step::before {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+  }
+  .process-step:hover::before { transform: scaleX(1); }
+  .process-step:hover { background: #111; }
+  .process-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+  }
+  .process-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.9rem;
+    line-height: 1.2;
+  }
+  .process-desc {
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.45);
+  }
+
+  /* ── PRICING ── */
+  #pricing {
+    background: var(--bone);
+    padding: 7rem 4rem;
+  }
+  #pricing .section-label { color: var(--accent2); }
+  #pricing .section-label::before { background: var(--accent2); }
+  #pricing h2 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--ink);
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 1rem;
+    max-width: 720px;
+  }
+  #pricing h2 em { font-style: italic; color: #555; }
+  .pricing-sub {
+    font-size: 1rem;
+    color: rgba(0,0,0,0.5);
+    margin-bottom: 3.5rem;
+    max-width: 480px;
+    line-height: 1.7;
+  }
+  .pricing-card {
+    background: var(--ink);
+    color: var(--white);
+    border-radius: 2px;
+    padding: 3rem;
+    max-width: 680px;
+    position: relative;
+    overflow: hidden;
+  }
+  .pricing-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--accent);
+  }
+  .pricing-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: var(--accent);
+    padding: 0.3rem 0.75rem;
+    border-radius: 1px;
+    margin-bottom: 1.5rem;
+  }
+  .pricing-amount {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(3rem, 6vw, 5rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--white);
+    margin-bottom: 0.4rem;
+  }
+  .pricing-amount span {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0;
+  }
+  .pricing-period {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 2rem;
+  }
+  .pricing-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+  }
+  .pricing-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.65);
+  }
+  .pricing-features li::before {
+    content: '';
+    width: 16px; height: 1px;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+  .btn-pricing {
+    display: inline-flex; align-items: center; gap: 0.75rem;
+    background: var(--accent);
+    color: var(--ink);
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    padding: 0.9rem 1.8rem;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-pricing:hover { background: #d9ff33; transform: translateY(-2px); }
+  .pricing-note {
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.25);
+  }
+  @media (max-width: 1024px) {
+    #process, #pricing { padding-left: 2rem; padding-right: 2rem; }
+    .process-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 680px) {
+    .process-grid { grid-template-columns: 1fr; }
   }
 
   /* ── ABOUT ── */
@@ -919,6 +1115,7 @@
     <li><a href="#work">Work</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
     <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
   </ul>
 </nav>
@@ -949,7 +1146,7 @@
 
   <div class="hero-stats">
     <div class="stat">
-      <div class="stat-num">4<span>+</span></div>
+      <div class="stat-num" style="font-size:1.4rem;">Countless</div>
       <div class="stat-label">Live Projects</div>
     </div>
     <div class="stat">
@@ -1079,6 +1276,89 @@
         <a href="https://pocketsono.com" target="_blank" rel="noopener" class="work-card-link">Visit Site →</a>
       </div>
     </div>
+
+    <!-- Blade & Co. -->
+    <div class="work-card card-blade reveal">
+      <div class="work-card-bg"></div>
+      <div class="card-pattern">
+        <svg width="400" height="400" viewBox="0 0 400 400" fill="none">
+          <line x1="200" y1="40" x2="200" y2="360" stroke="#c8a84b" stroke-width="0.5"/>
+          <line x1="40" y1="200" x2="360" y2="200" stroke="#c8a84b" stroke-width="0.5"/>
+          <rect x="100" y="100" width="200" height="200" stroke="#c8a84b" stroke-width="0.5"/>
+          <rect x="140" y="140" width="120" height="120" stroke="#c8a84b" stroke-width="0.5"/>
+          <circle cx="200" cy="200" r="80" stroke="#c8a84b" stroke-width="0.5"/>
+          <circle cx="200" cy="200" r="40" stroke="#c8a84b" stroke-width="0.5"/>
+        </svg>
+      </div>
+      <div class="work-card-inner">
+        <span class="work-card-num">05</span>
+        <span class="work-tag">Luxury / Barbershop</span>
+        <h3 class="work-card-title">Blade & Co.</h3>
+        <p class="work-card-desc">A high-end barbershop brand built to attract premium clientele — sharp aesthetics, seamless booking, and undeniable prestige.</p>
+        <a href="https://tondelweb.github.io/Blade/" target="_blank" rel="noopener" class="work-card-link">Visit Site →</a>
+      </div>
+    </div>
+
+    <!-- Grounds & Co. -->
+    <div class="work-card card-grounds reveal reveal-delay-1">
+      <div class="work-card-bg"></div>
+      <div class="card-pattern">
+        <svg width="400" height="400" viewBox="0 0 400 400" fill="none">
+          <circle cx="200" cy="200" r="160" stroke="#c8894b" stroke-width="0.5"/>
+          <circle cx="200" cy="200" r="110" stroke="#c8894b" stroke-width="0.5"/>
+          <circle cx="200" cy="200" r="60" stroke="#c8894b" stroke-width="0.5"/>
+          <path d="M200 40 Q260 120 200 200 Q140 280 200 360" stroke="#c8894b" stroke-width="0.5" fill="none"/>
+          <path d="M40 200 Q120 140 200 200 Q280 260 360 200" stroke="#c8894b" stroke-width="0.5" fill="none"/>
+        </svg>
+      </div>
+      <div class="work-card-inner">
+        <span class="work-card-num">06</span>
+        <span class="work-tag">Food & Beverage / Coffee</span>
+        <h3 class="work-card-title">Grounds & Co.</h3>
+        <p class="work-card-desc">A warm, inviting site for an artisan coffee brand — crafted to tell the story behind every cup and drive foot traffic.</p>
+        <a href="https://tondelweb.github.io/Grounds/" target="_blank" rel="noopener" class="work-card-link">Visit Site →</a>
+      </div>
+    </div>
+
+    <!-- Nova Realty -->
+    <div class="work-card card-nova reveal reveal-delay-2">
+      <div class="work-card-bg"></div>
+      <div class="card-pattern">
+        <svg width="400" height="400" viewBox="0 0 400 400" fill="none">
+          <path d="M200 60 L340 160 L340 340 L60 340 L60 160 Z" stroke="#7aafc8" stroke-width="0.5"/>
+          <path d="M200 100 L310 180 L310 310 L90 310 L90 180 Z" stroke="#7aafc8" stroke-width="0.5"/>
+          <path d="M200 140 L280 200 L280 280 L120 280 L120 200 Z" stroke="#7aafc8" stroke-width="0.5"/>
+          <line x1="200" y1="60" x2="200" y2="340" stroke="#7aafc8" stroke-width="0.5"/>
+        </svg>
+      </div>
+      <div class="work-card-inner">
+        <span class="work-card-num">07</span>
+        <span class="work-tag">Real Estate / Property</span>
+        <h3 class="work-card-title">Nova Realty</h3>
+        <p class="work-card-desc">A sleek, trust-building real estate site designed to showcase listings, generate leads, and position agents as the local authority.</p>
+        <a href="https://tondelweb.github.io/Nova/" target="_blank" rel="noopener" class="work-card-link">Visit Site →</a>
+      </div>
+    </div>
+
+    <!-- APEX Training -->
+    <div class="work-card card-apex reveal reveal-delay-3">
+      <div class="work-card-bg"></div>
+      <div class="card-pattern">
+        <svg width="400" height="400" viewBox="0 0 400 400" fill="none">
+          <path d="M200 40 L360 360 L40 360 Z" stroke="#ff5533" stroke-width="0.5"/>
+          <path d="M200 100 L320 340 L80 340 Z" stroke="#ff5533" stroke-width="0.5"/>
+          <path d="M200 160 L280 320 L120 320 Z" stroke="#ff5533" stroke-width="0.5"/>
+          <line x1="200" y1="40" x2="200" y2="360" stroke="#ff5533" stroke-width="0.5"/>
+        </svg>
+      </div>
+      <div class="work-card-inner">
+        <span class="work-card-num">08</span>
+        <span class="work-tag">Fitness / Personal Training</span>
+        <h3 class="work-card-title">APEX Training</h3>
+        <p class="work-card-desc">A high-energy fitness brand site built to convert visitors into paying clients — bold design that matches the intensity of the sport.</p>
+        <a href="https://tondelweb.github.io/Apex/" target="_blank" rel="noopener" class="work-card-link">Visit Site →</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1158,6 +1438,59 @@
   </div>
 </section>
 
+<!-- PROCESS -->
+<section id="process">
+  <div class="section-label reveal">How It Works</div>
+  <h2 class="reveal reveal-delay-1">Simple process.<br><em>Real results.</em></h2>
+  <div class="process-grid">
+    <div class="process-step reveal">
+      <div class="process-num">01</div>
+      <h3 class="process-title">Discovery</h3>
+      <p class="process-desc">We talk about your business, goals, and what you need. No jargon, no fluff — just clarity.</p>
+    </div>
+    <div class="process-step reveal reveal-delay-1">
+      <div class="process-num">02</div>
+      <h3 class="process-title">Design</h3>
+      <p class="process-desc">I build a clean, custom design tailored to your brand. You'll see exactly what you're getting before a single line of code is written.</p>
+    </div>
+    <div class="process-step reveal reveal-delay-2">
+      <div class="process-num">03</div>
+      <h3 class="process-title">Build</h3>
+      <p class="process-desc">Your site gets developed fast, with no bloat or fluff. Clean code, fast load times, built to last.</p>
+    </div>
+    <div class="process-step reveal reveal-delay-3">
+      <div class="process-num">04</div>
+      <h3 class="process-title">Launch</h3>
+      <p class="process-desc">We go live. You get a website that actually works — and a partner you can reach when you need updates.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-label reveal">Pricing</div>
+  <h2 class="reveal reveal-delay-1">Professional websites<br><em>without the agency price tag.</em></h2>
+  <p class="pricing-sub reveal reveal-delay-2">No surprise invoices. No locked-in contracts. Just an honest monthly rate that covers everything your site needs to stay live and looking sharp.</p>
+  <div class="pricing-card reveal reveal-delay-3">
+    <span class="pricing-badge">Most Popular</span>
+    <div class="pricing-amount">$50<span>–$75</span></div>
+    <p class="pricing-period">/ month &nbsp;·&nbsp; everything included</p>
+    <ul class="pricing-features">
+      <li>Custom-designed website built from scratch</li>
+      <li>Mobile-responsive on every device</li>
+      <li>Hosting, domain management & SSL included</li>
+      <li>Ongoing updates and edits — just ask</li>
+      <li>Fast turnaround, direct communication</li>
+      <li>No hidden fees, no surprise bills</li>
+    </ul>
+    <a href="#contact" class="btn-pricing">
+      Get Started
+      <span>→</span>
+    </a>
+    <p class="pricing-note">One-time build fee may apply depending on project scope. Ask for a free quote.</p>
+  </div>
+</section>
+
 <!-- ABOUT -->
 <section id="about">
   <div class="about-inner">
@@ -1169,7 +1502,7 @@
         </div>
       </div>
       <div class="about-float-stat">
-        <div class="float-num">4+</div>
+        <div class="float-num" style="font-size:1.1rem;">Countless</div>
         <div class="float-label">Live Sites</div>
       </div>
       <div class="about-float-stat">
@@ -1219,12 +1552,18 @@
       <div class="section-label reveal">Get in Touch</div>
       <h2 class="reveal reveal-delay-1">Let's build<br><em>something great.</em></h2>
       <p class="reveal reveal-delay-2">Tell me about your project and I'll get back to you within 24 hours with a clear path forward.</p>
-      <a href="mailto:hello@tondelweb.com" class="contact-email reveal reveal-delay-3">
+      <a href="mailto:tondelweb@gmail.com" class="contact-email reveal reveal-delay-3">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
           <rect x="1" y="3" width="14" height="10" rx="1"/>
           <path d="M1 4l7 5 7-5"/>
         </svg>
-        hello@tondelweb.com
+        tondelweb@gmail.com
+      </a>
+      <a href="tel:6095789849" class="contact-email reveal reveal-delay-3" style="margin-top:0.75rem;">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M2 2h4l1.5 3.5-2 1.5a10 10 0 004.5 4.5l1.5-2L15 11v4a1 1 0 01-1 1C6 16 0 10 0 3a1 1 0 011-1z"/>
+        </svg>
+        (609) 578-9849
       </a>
       <div class="contact-dividers reveal reveal-delay-4">
         <div class="contact-divider-item">
@@ -1233,7 +1572,7 @@
         </div>
         <div class="contact-divider-item">
           <div class="dot"></div>
-          <div><strong>Project Start</strong> — 1–2 weeks from agreement</div>
+          <div><strong>Project Start</strong> — Same day service</div>
         </div>
         <div class="contact-divider-item">
           <div class="dot"></div>
