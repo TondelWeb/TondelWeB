@@ -1719,7 +1719,6 @@
     </div>
 
     <form class="contact-form reveal" id="quote-form" action="https://formspree.io/f/xjgdnoka" method="POST" onsubmit="handleSubmit(event)">
-      <input type="hidden" name="_subject" value="New Quote Request — TondelWeb">
       <div class="form-row">
         <div class="form-group">
           <label class="form-label">Name</label>
@@ -1835,12 +1834,26 @@
     btn.innerHTML = 'Sending...';
     btn.disabled = true;
 
+    const payload = {
+      name: form.querySelector('[name="name"]').value,
+      email: form.querySelector('[name="email"]').value,
+      business: form.querySelector('[name="business"]').value,
+      project_type: form.querySelector('[name="project_type"]').value,
+      message: form.querySelector('[name="message"]').value,
+      _subject: 'New Quote Request - TondelWeb'
+    };
+
     try {
       const res = await fetch('https://formspree.io/f/xjgdnoka', {
         method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
+        body: JSON.stringify(payload),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
       });
+
+      const result = await res.json();
 
       if (res.ok) {
         btn.innerHTML = 'Message Sent!';
@@ -1848,9 +1861,7 @@
         btn.style.color = 'var(--accent)';
         form.reset();
       } else {
-        res.json().then(function(data) {
-          console.error('Formspree error:', data);
-        });
+        console.error('Formspree error:', result);
         btn.innerHTML = 'Error - Try Again';
         btn.style.background = 'var(--accent2)';
         btn.style.color = '#fff';
