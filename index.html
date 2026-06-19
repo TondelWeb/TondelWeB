@@ -1718,7 +1718,8 @@
       </div>
     </div>
 
-    <form class="contact-form reveal" id="quote-form" onsubmit="handleSubmit(event)">
+    <form class="contact-form reveal" id="quote-form" action="https://formspree.io/f/xjgdnoka" method="POST" onsubmit="handleSubmit(event)">
+      <input type="hidden" name="_subject" value="New Quote Request — TondelWeb">
       <div class="form-row">
         <div class="form-group">
           <label class="form-label">Name</label>
@@ -1830,9 +1831,8 @@
     e.preventDefault();
     const form = e.target;
     const btn = form.querySelector('.form-submit');
-    const originalHTML = btn.innerHTML;
 
-    btn.innerHTML = 'Sending…';
+    btn.innerHTML = 'Sending...';
     btn.disabled = true;
 
     try {
@@ -1843,18 +1843,24 @@
       });
 
       if (res.ok) {
-        btn.innerHTML = 'Message Sent ✓';
+        btn.innerHTML = 'Message Sent!';
         btn.style.background = '#1a1a1a';
         btn.style.color = 'var(--accent)';
         form.reset();
       } else {
-        btn.innerHTML = 'Error — Try Again';
+        res.json().then(function(data) {
+          console.error('Formspree error:', data);
+        });
+        btn.innerHTML = 'Error - Try Again';
         btn.style.background = 'var(--accent2)';
+        btn.style.color = '#fff';
         btn.disabled = false;
       }
-    } catch {
-      btn.innerHTML = 'Error — Try Again';
+    } catch(err) {
+      console.error('Submission error:', err);
+      btn.innerHTML = 'Error - Try Again';
       btn.style.background = 'var(--accent2)';
+      btn.style.color = '#fff';
       btn.disabled = false;
     }
   }
