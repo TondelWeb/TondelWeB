@@ -1718,24 +1718,24 @@
       </div>
     </div>
 
-    <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+    <form class="contact-form reveal" id="quote-form" onsubmit="handleSubmit(event)">
       <div class="form-row">
         <div class="form-group">
           <label class="form-label">Name</label>
-          <input type="text" class="form-input" placeholder="Your name" required>
+          <input type="text" name="name" class="form-input" placeholder="Your name" required>
         </div>
         <div class="form-group">
           <label class="form-label">Email</label>
-          <input type="email" class="form-input" placeholder="your@email.com" required>
+          <input type="email" name="email" class="form-input" placeholder="your@email.com" required>
         </div>
       </div>
       <div class="form-group">
         <label class="form-label">Business Name</label>
-        <input type="text" class="form-input" placeholder="Your company">
+        <input type="text" name="business" class="form-input" placeholder="Your company">
       </div>
       <div class="form-group">
         <label class="form-label">Project Type</label>
-        <select class="form-select">
+        <select name="project_type" class="form-select">
           <option value="" disabled selected>What do you need?</option>
           <option>New Website</option>
           <option>Shopify Store</option>
@@ -1748,9 +1748,9 @@
       </div>
       <div class="form-group">
         <label class="form-label">Tell Me About Your Project</label>
-        <textarea class="form-textarea" placeholder="What are you building? What's your timeline and budget?"></textarea>
+        <textarea name="message" class="form-textarea" placeholder="What are you building? What's your timeline and budget?"></textarea>
       </div>
-      <button type="submit" class="form-submit">
+      <button type="submit" class="form-submit" id="submit-btn">
         Send Inquiry
         <span>→</span>
       </button>
@@ -1826,13 +1826,37 @@
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
   // ── FORM SUBMIT ──
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    const btn = e.target.querySelector('.form-submit');
-    btn.textContent = 'Message Sent ✓';
-    btn.style.background = '#1a1a1a';
-    btn.style.color = 'var(--accent)';
+    const form = e.target;
+    const btn = form.querySelector('.form-submit');
+    const originalHTML = btn.innerHTML;
+
+    btn.innerHTML = 'Sending…';
     btn.disabled = true;
+
+    try {
+      const res = await fetch('https://formspree.io/f/xjgdnoka', {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        btn.innerHTML = 'Message Sent ✓';
+        btn.style.background = '#1a1a1a';
+        btn.style.color = 'var(--accent)';
+        form.reset();
+      } else {
+        btn.innerHTML = 'Error — Try Again';
+        btn.style.background = 'var(--accent2)';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.innerHTML = 'Error — Try Again';
+      btn.style.background = 'var(--accent2)';
+      btn.disabled = false;
+    }
   }
 
   // ── SMOOTH ANCHOR SCROLL ──
