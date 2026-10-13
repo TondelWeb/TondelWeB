@@ -316,7 +316,7 @@
     <form class="form reveal" id="contact-form" action="https://formspree.io/f/xjgdnoka" method="POST" novalidate>
       <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
       <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
-      <div class="field"><label for="f-store">Store website</label><input id="f-store" name="store" type="url" placeholder="https://" inputmode="url"></div>
+      <div class="field"><label for="f-store">Store website</label><input id="f-store" name="store" type="text" placeholder="yourstore.com" inputmode="url" autocomplete="url" autocapitalize="off" spellcheck="false"></div>
       <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" rows="4" required></textarea></div>
       <button class="btn btn-accent btn-block" type="submit" id="f-submit">Send message</button>
       <p class="form-status" id="form-status" role="status" aria-live="polite"></p>

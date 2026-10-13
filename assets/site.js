@@ -238,7 +238,7 @@
       var payload = {
         name: form.name.value,
         email: form.email.value,
-        store: form.store.value,
+        store: (function (v) { v = v.trim(); return v && !/^https?:\/\//i.test(v) ? "https://" + v : v; })(form.store.value),
         message: form.message.value,
         _subject: "New Tondelweb Catalog inquiry"
       };

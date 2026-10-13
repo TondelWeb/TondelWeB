@@ -18,6 +18,12 @@
     }
   });
 
+  // people can type "mysite.com"; add https:// for them
+  var withScheme = function (v) {
+    v = (v || "").trim();
+    return v && !/^https?:\/\//i.test(v) ? "https://" + v : v;
+  };
+
   var form = document.getElementById("hub-form");
   if (!form) return;
   var svc = new URLSearchParams(window.location.search).get("service");
@@ -39,7 +45,7 @@
       service: sel.value,
       name: form.querySelector("#h-name").value,
       email: form.querySelector("#h-email").value,
-      website: form.querySelector("#h-site").value,
+      website: withScheme(form.querySelector("#h-site").value),
       message: form.querySelector("#h-msg").value,
       _subject: "New Tondelweb inquiry: " + label
     };
