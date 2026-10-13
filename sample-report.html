@@ -1,0 +1,147 @@
+<!doctype html><html lang='en'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>Catalog check: Example Lighting Store (sample)</title><style>
+:root { --ink:#1d2433; --muted:#5b6475; --line:#e3e6ec; --bg:#ffffff; --soft:#f6f7f9; --accent:#1f4e8c;
+        --high:#b42318; --high-bg:#fdecea; --med:#a15c07; --med-bg:#fff4e0; --low:#475467; --low-bg:#eef0f3;
+        --ok:#1a7f37; --ok-bg:#e8f5ec; }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font:14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+main { max-width:1120px; margin:0 auto; padding:28px 20px 60px; }
+h1 { font-size:26px; margin:0 0 4px; } h2 { font-size:18px; margin:34px 0 10px; } h3 { font-size:15px; margin:22px 0 8px; }
+.muted { color:var(--muted); } .small { font-size:12px; }
+.banner { background:#fff8db; border:1px solid #f0d77b; padding:10px 14px; border-radius:8px; margin-bottom:18px; font-weight:600; }
+.meta { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:6px 24px; margin:10px 0 18px; }
+.cards { display:grid; grid-template-columns: repeat(auto-fit, minmax(170px,1fr)); gap:12px; }
+.card { border:1px solid var(--line); border-radius:10px; padding:14px 16px; background:var(--soft); }
+.card .n { font-size:28px; font-weight:700; } .card .l { color:var(--muted); font-size:13px; }
+.steps { background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:12px 18px; }
+.steps li { margin:4px 0; }
+table { width:100%; border-collapse:collapse; margin:6px 0 4px; font-size:13px; }
+th, td { text-align:left; vertical-align:top; padding:7px 8px; border-bottom:1px solid var(--line); }
+th { background:var(--soft); font-weight:600; position:sticky; top:0; }
+th.num { text-align:right; }
+td:first-child { min-width:170px; }
+td.num { text-align:right; white-space:nowrap; }
+.pill { display:inline-block; padding:1px 8px; border-radius:999px; font-size:12px; font-weight:600; white-space:nowrap; }
+.high { color:var(--high); background:var(--high-bg); } .medium { color:var(--med); background:var(--med-bg); }
+.low { color:var(--low); background:var(--low-bg); } .propose { color:var(--ok); background:var(--ok-bg); }
+.old { color:var(--high); text-decoration:line-through; } .new { color:var(--ok); font-weight:600; }
+.src { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size:12px; color:var(--muted); }
+.wrap { overflow-x:auto; }
+.never li { margin:3px 0; }
+footer { margin-top:40px; color:var(--muted); font-size:12px; border-top:1px solid var(--line); padding-top:12px; }
+@media print { th { position:static; } .wrap { overflow:visible; } }
+</style></head><body><main>
+<div class='banner'>SAMPLE REPORT: every store, supplier, product and barcode here is invented to show what a real report looks like.</div>
+<h1>Catalog check: Example Lighting Store (sample)</h1>
+<div class='muted'>Your Shopify catalog compared with your supplier's latest file. Every proposed fix shows the exact supplier row it came from.</div>
+<div class='meta small'>
+<div><span class='muted'>Date:</span> 2026-10-13</div>
+<div><span class='muted'>Store file:</span> shopify_products_export.csv</div>
+<div><span class='muted'>Supplier file:</span> supplier_price_list.xlsx [Price List]</div>
+<div><span class='muted'>Run:</span> sample_report</div>
+</div>
+<div class='cards'>
+<div class='card'><div class='n'>99</div><div class='l'>SKUs (variants) checked</div></div>
+<div class='card'><div class='n'>93</div><div class='l'>matched to the supplier file</div></div>
+<div class='card'><div class='n'>17</div><div class='l'>proposed fixes, each with a source row</div></div>
+<div class='card'><div class='n'>25</div><div class='l'>flags for a person to review</div></div>
+<div class='card'><div class='n'>19</div><div class='l'>high-severity items</div></div>
+</div>
+<h2>What to do next</h2><ol class='steps'><li>Open <b>proposals.csv</b>. In the <b>approve</b> column, write <b>yes</b> or <b>no</b> for each fix. Leave it blank if you're not sure yet.</li><li>Send the file back. You'll receive an import file containing <b>only</b> the fixes you approved.</li><li>Before importing, back up your products (Shopify admin → Products → Export).</li><li>Import in Shopify (Products → Import) and tick “Overwrite products with matching handles”.</li><li>Flags below need a human decision. Nothing flagged is ever changed by us.</li></ol>
+<h2>Issues by type</h2><div class='wrap'><table><tr><th>Check</th><th>Severity</th><th class='num'>Proposed fixes</th><th class='num'>Flags</th></tr>
+<tr><td>Missing in store (supplier has it)</td><td><span class='pill medium'>medium</span></td><td class='num'>9</td><td class='num'>0</td></tr>
+<tr><td>Store and supplier disagree</td><td><span class='pill high'>high</span></td><td class='num'>4</td><td class='num'>0</td></tr>
+<tr><td>&#x27;Equivalent&#x27; value in a spec field</td><td><span class='pill high'>high</span></td><td class='num'>2</td><td class='num'>0</td></tr>
+<tr><td>Possible unit mix-up</td><td><span class='pill high'>high</span></td><td class='num'>0</td><td class='num'>2</td></tr>
+<tr><td>Invalid barcode in store</td><td><span class='pill high'>high</span></td><td class='num'>2</td><td class='num'>0</td></tr>
+<tr><td>Title contradicts supplier file</td><td><span class='pill high'>high</span></td><td class='num'>0</td><td class='num'>2</td></tr>
+<tr><td>Variant option contradicts supplier file</td><td><span class='pill high'>high</span></td><td class='num'>0</td><td class='num'>1</td></tr>
+<tr><td>Duplicate SKU in store</td><td><span class='pill high'>high</span></td><td class='num'>0</td><td class='num'>1</td></tr>
+<tr><td>Duplicate barcode in store</td><td><span class='pill high'>high</span></td><td class='num'>0</td><td class='num'>1</td></tr>
+<tr><td>Duplicate SKU in supplier file</td><td><span class='pill high'>high</span></td><td class='num'>0</td><td class='num'>1</td></tr>
+<tr><td>Invalid barcode in supplier file</td><td><span class='pill high'>high</span></td><td class='num'>0</td><td class='num'>1</td></tr>
+<tr><td>Value looks implausible</td><td><span class='pill high'>high</span></td><td class='num'>0</td><td class='num'>2</td></tr>
+<tr><td>Protected field: needs human review</td><td><span class='pill high'>high</span></td><td class='num'>0</td><td class='num'>3</td></tr>
+<tr><td>Supplier value unclear</td><td><span class='pill medium'>medium</span></td><td class='num'>0</td><td class='num'>2</td></tr>
+<tr><td>Variants disagree on a product-level spec</td><td><span class='pill medium'>medium</span></td><td class='num'>0</td><td class='num'>1</td></tr>
+<tr><td>Required spec missing in store and supplier file</td><td><span class='pill medium'>medium</span></td><td class='num'>0</td><td class='num'>1</td></tr>
+<tr><td>In store but not in supplier file</td><td><span class='pill low'>low</span></td><td class='num'>0</td><td class='num'>3</td></tr>
+<tr><td>In supplier file but not in store</td><td><span class='pill low'>low</span></td><td class='num'>0</td><td class='num'>4</td></tr>
+</table></div>
+<h2>Proposed fixes (17)</h2>
+<div class='wrap'><table><tr><th>Product</th><th>Field</th><th>Now</th><th>Proposed</th><th>Source (supplier file)</th><th>Why</th></tr>
+<tr><td>PAR30 LED Bulb 10W 3000K<br><span class='muted small'> · SKU EX-BL-0110</span></td><td>barcode</td><td><span class='old'>200000003333</span></td><td><span class='new'>200000003708</span></td><td class='src'>supplier_price_list.xlsx [Price List] · row 13 · UPC: “200000003708”</td><td><span class='pill high'>high</span> Store barcode 200000003333 differs from the supplier&#x27;s 200000003708 (row 13). Barcodes identify the product on Google Shopping and marketplaces, so check before approving.</td></tr>
+<tr><td>GU10 LED Bulb 6W 4000K</td><td>wattage</td><td><span class='old'>60W equivalent</span></td><td><span class='new'>6</span></td><td class='src'>supplier_price_list.xlsx [Price List] · row 17 · Watts: “6”</td><td><span class='pill high'>high</span> Store shows &#x27;60W equivalent&#x27;, an &#x27;equivalent&#x27; value, in the wattage field. Supplier file says the actual value is 6 (row 17).</td></tr>
+<tr><td>B11 Candelabra LED Bulb 4W 2700K</td><td>wattage</td><td><span class='old'>40W Equivalent</span></td><td><span class='new'>4</span></td><td class='src'>supplier_price_list.xlsx [Price List] · row 18 · Watts: “4”</td><td><span class='pill high'>high</span> Store shows &#x27;40W Equivalent&#x27;, an &#x27;equivalent&#x27; value, in the wattage field. Supplier file says the actual value is 4 (row 18).</td></tr>
+<tr><td>MR16 LED Bulb 6W 3000K<br><span class='muted small'> · SKU EX-BL-0112</span></td><td>barcode</td><td><span class='old'>200000004449</span></td><td><span class='new'>200000004446</span></td><td class='src'>supplier_price_list.xlsx [Price List] · row 15 · UPC: “200000004446”</td><td><span class='pill high'>high</span> Store barcode &#x27;200000004449&#x27; is invalid: its last digit (the check digit) doesn&#x27;t match the others, so it&#x27;s mistyped. Supplier file gives 200000004446 (row 15), which is valid.</td></tr>
+<tr><td>Fenwick Island Light<br><span class='muted small'>Brushed Nickel · SKU EX-FX-1106-BN</span></td><td>barcode</td><td><span class='old'>200000015544</span></td><td><span class='new'>200000015541</span></td><td class='src'>supplier_price_list.xlsx [Price List] · row 45 · UPC: “200000015541”</td><td><span class='pill high'>high</span> Store barcode &#x27;200000015544&#x27; is invalid: its last digit (the check digit) doesn&#x27;t match the others, so it&#x27;s mistyped. Supplier file gives 200000015541 (row 45), which is valid.</td></tr>
+<tr><td>Garrow Outdoor Lantern<br><span class='muted small'>Black · SKU EX-FX-1107-BK</span></td><td>barcode</td><td><span class='muted'>(blank)</span></td><td><span class='new'>200000015916</span></td><td class='src'>supplier_price_list.xlsx [Price List] · row 46 · UPC: “200000015916”</td><td><span class='pill medium'>medium</span> Store has no barcode. Supplier file gives 200000015916 (row 46), and its check digit is valid.</td></tr>
+<tr><td>Garrow Outdoor Lantern<br><span class='muted small'>Aged Brass · SKU EX-FX-1107-AB</span></td><td>barcode</td><td><span class='muted'>(blank)</span></td><td><span class='new'>200000016289</span></td><td class='src'>supplier_price_list.xlsx [Price List] · row 47 · UPC: “200000016289”</td><td><span class='pill medium'>medium</span> Store has no barcode. Supplier file gives 200000016289 (row 47), and its check digit is valid.</td></tr>
+<tr><td>Hollis Mini Pendant<br><span class='muted small'>Brushed Nickel · SKU EX-FX-1108-BN</span></td><td>barcode</td><td><span class='muted'>(blank)</span></td><td><span class='new'>200000017767</span></td><td class='src'>supplier_price_list.xlsx [Price List] · row 51 · UPC: “200000017767”</td><td><span class='pill medium'>medium</span> Store has no barcode. Supplier file gives 200000017767 (row 51), and its check digit is valid.</td></tr>
+<tr><td>A19 LED Bulb 9W 3000K</td><td>lumens</td><td><span class='muted'>(blank)</span></td><td><span class='new'>800</span></td><td class='src'>supplier_price_list.xlsx [Price List] · row 5 · Lumens: “800”</td><td><span class='pill medium'>medium</span> Store has no lumens. Supplier file says 800 (row 5).</td></tr>
+<tr><td>A21 LED Bulb 15W 2700K</td><td>lumens</td><td><span class='muted'>(blank)</span></td><td><span class='new'>1600</span></td><td class='src'>supplier_price_list.xlsx [Price List] · row 8 · Lumens: “1600”</td><td><span class='pill medium'>medium</span> Store has no lumens. Supplier file says 1600 (row 8).</td></tr>
+<tr><td>BR40 LED Bulb 14W 2700K</td><td>lumens</td><td><span class='muted'>(blank)</span></td><td><span class='new'>1100</span></td><td class='src'>supplier_price_list.xlsx [Price List] · row 11 · Lumens: “1100”</td><td><span class='pill medium'>medium</span> Store has no lumens. Supplier file says 1100 (row 11).</td></tr>
+<tr><td>PAR20 LED Bulb 7W 2700K</td><td>lumens</td><td><span class='muted'>(blank)</span></td><td><span class='new'>500</span></td><td class='src'>supplier_price_list.xlsx [Price List] · row 14 · Lumens: “500”</td><td><span class='pill medium'>medium</span> Store has no lumens. Supplier file says 500 (row 14).</td></tr>
+<tr><td>Bexley Flush Mount</td><td>base_type</td><td><span class='muted'>(blank)</span></td><td><span class='new'>E26</span></td><td class='src'>supplier_price_list.xlsx [Price List] · row 31 · Base: “E26”<br>supplier_price_list.xlsx [Price List] · row 32 · Base: “E26”<br>supplier_price_list.xlsx [Price List] · row 33 · Base: “E26”</td><td><span class='pill medium'>medium</span> Store has no base_type. Supplier file says &#x27;E26&#x27; (row 31, row 32, row 33).</td></tr>
+<tr><td>Ellery Semi-Flush</td><td>base_type</td><td><span class='muted'>(blank)</span></td><td><span class='new'>E26</span></td><td class='src'>supplier_price_list.xlsx [Price List] · row 40 · Base: “E26”<br>supplier_price_list.xlsx [Price List] · row 41 · Base: “E26”<br>supplier_price_list.xlsx [Price List] · row 42 · Base: “E26”</td><td><span class='pill medium'>medium</span> Store has no base_type. Supplier file says &#x27;E26&#x27; (row 40, row 41, row 42).</td></tr>
+<tr><td>Calder Wall Sconce</td><td>lumens</td><td><span class='old'>850</span></td><td><span class='new'>800</span></td><td class='src'>supplier_price_list.xlsx [Price List] · row 34 · Lumens: “800”<br>supplier_price_list.xlsx [Price List] · row 35 · Lumens: “800”<br>supplier_price_list.xlsx [Price List] · row 36 · Lumens: “800”</td><td><span class='pill medium'>medium</span> Store says 850; supplier file says 800 (row 34, row 35, row 36).</td></tr>
+<tr><td>A19 LED Bulb 11W 2700K</td><td>cct</td><td><span class='old'>3000</span></td><td><span class='new'>2700</span></td><td class='src'>supplier_price_list.xlsx [Price List] · row 6 · Color Temp (K): “2700K”</td><td><span class='pill medium'>medium</span> Store says 3000; supplier file says 2700K (row 6).</td></tr>
+<tr><td>GU10 LED Bulb 6W 2700K</td><td>cct</td><td><span class='old'>3000</span></td><td><span class='new'>2700</span></td><td class='src'>supplier_price_list.xlsx [Price List] · row 16 · Color Temp (K): “2700K”</td><td><span class='pill medium'>medium</span> Store says 3000; supplier file says 2700K (row 16).</td></tr>
+</table></div>
+<h2>Flags for your review (25)</h2>
+<h3>Possible unit mix-up (2)</h3><div class='wrap'><table><tr><th>Product / SKU</th><th>Field</th><th>Details</th><th>Source</th></tr>
+<tr><td>Iver Chandelier 6-Light</td><td>height</td><td><span class='pill high'>high</span> Supplier row 52 gives height as &#x27;305 mm&#x27; (mm), but this field is in in. The tool doesn&#x27;t convert units on its own; check which is right.</td><td class='src'>supplier_price_list.xlsx [Price List] · row 52 · Height (in): “305 mm”</td></tr>
+<tr><td>Juno-Style Track Head</td><td>height</td><td><span class='pill high'>high</span> Supplier row 55 gives height as &#x27;305 mm&#x27; (mm), but this field is in in. The tool doesn&#x27;t convert units on its own; check which is right.</td><td class='src'>supplier_price_list.xlsx [Price List] · row 55 · Height (in): “305 mm”</td></tr>
+</table></div>
+<h3>Title contradicts supplier file (2)</h3><div class='wrap'><table><tr><th>Product / SKU</th><th>Field</th><th>Details</th><th>Source</th></tr>
+<tr><td>A19 LED Bulb 9W 3000K</td><td>cct</td><td><span class='pill high'>high</span> The title says 3000K, but the supplier file says 2700K (row 4). The tool never edits titles; fix it by hand if the supplier is right.</td><td class='src'>supplier_price_list.xlsx [Price List] · row 4 · Color Temp (K): “2700K”</td></tr>
+<tr><td>BR30 LED Bulb 12W 3000K</td><td>wattage</td><td><span class='pill high'>high</span> The title says 12W, but the supplier file says 8 (row 10). The tool never edits titles; fix it by hand if the supplier is right.</td><td class='src'>supplier_price_list.xlsx [Price List] · row 10 · Watts: “8”</td></tr>
+</table></div>
+<h3>Variant option contradicts supplier file (1)</h3><div class='wrap'><table><tr><th>Product / SKU</th><th>Field</th><th>Details</th><th>Source</th></tr>
+<tr><td>Jory LED Under-Cabinet Bar<br><span class='muted small'>4000K · SKU EX-RC-2032</span></td><td>cct</td><td><span class='pill high'>high</span> The variant option &#x27;Color Temperature: 4000K&#x27; doesn&#x27;t match the supplier file, which says 5000K (row 96). Options are never edited by the tool, because changing them replaces variants in Shopify.</td><td class='src'>supplier_price_list.xlsx [Price List] · row 96 · Color Temp (K): “5000K”</td></tr>
+</table></div>
+<h3>Duplicate SKU in store (1)</h3><div class='wrap'><table><tr><th>Product / SKU</th><th>Field</th><th>Details</th><th>Source</th></tr>
+<tr><td>Dalton Vanity Light 4-Light<br><span class='muted small'>Black · SKU EX-FX-1104-BK</span></td><td></td><td><span class='pill high'>high</span> 2 store variants share SKU EX-FX-1104-BK: Dalton Vanity Light 4-Light (Black); Dalton Vanity Light 4-Light (Aged Brass). No fixes are proposed for them until each has its own SKU.</td><td class='src'></td></tr>
+</table></div>
+<h3>Duplicate barcode in store (1)</h3><div class='wrap'><table><tr><th>Product / SKU</th><th>Field</th><th>Details</th><th>Source</th></tr>
+<tr><td>PAR38 LED Bulb 15W 3000K<br><span class='muted small'>SKU EX-BL-0109</span></td><td>barcode</td><td><span class='pill high'>high</span> 2 variants share barcode 200000003333: PAR38 LED Bulb 15W 3000K (default, SKU EX-BL-0109); PAR30 LED Bulb 10W 3000K (default, SKU EX-BL-0110). Each product variant needs its own barcode for Google Shopping and marketplaces.</td><td class='src'></td></tr>
+</table></div>
+<h3>Duplicate SKU in supplier file (1)</h3><div class='wrap'><table><tr><th>Product / SKU</th><th>Field</th><th>Details</th><th>Source</th></tr>
+<tr><td>(not in store)<br><span class='muted small'>SKU EX-BL-0124</span></td><td></td><td><span class='pill high'>high</span> SKU EX-BL-0124 appears 2 times in the supplier file (row 27, row 103). The tool can&#x27;t tell which row is right, so it won&#x27;t propose fixes for it.</td><td class='src'>supplier_price_list.xlsx [Price List] · row 27 · Item #: “EX-BL-0124”<br>supplier_price_list.xlsx [Price List] · row 103 · Item #: “EX-BL-0124”</td></tr>
+</table></div>
+<h3>Invalid barcode in supplier file (1)</h3><div class='wrap'><table><tr><th>Product / SKU</th><th>Field</th><th>Details</th><th>Source</th></tr>
+<tr><td>Lark Picture Light<br><span class='muted small'>Aged Brass · SKU EX-FX-1112-AB</span></td><td>barcode</td><td><span class='pill high'>high</span> Supplier barcode &#x27;2.40000E+11&#x27; can&#x27;t be used: it was turned into scientific notation by Excel (e.g. 8.4E+11), so digits are lost. Ask the supplier for the correct barcode.</td><td class='src'>supplier_price_list.xlsx [Price List] · row 62 · UPC: “2.40000E+11”</td></tr>
+</table></div>
+<h3>Value looks implausible (2)</h3><div class='wrap'><table><tr><th>Product / SKU</th><th>Field</th><th>Details</th><th>Source</th></tr>
+<tr><td>A15 Appliance LED Bulb 5W 2700K<br><span class='muted small'>SKU EX-BL-0119</span></td><td>lumens / wattage</td><td><span class='pill high'>high</span> Supplier row 22 gives 4500 lumens at 5 watts = 900 lumens per watt. Real lighting is roughly 5–250, so one of these numbers is probably wrong. Neither is proposed until the supplier confirms.</td><td class='src'>supplier_price_list.xlsx [Price List] · row 22 · Lumens: “4500”<br>supplier_price_list.xlsx [Price List] · row 22 · Watts: “5”</td></tr>
+<tr><td>ST19 Filament LED Bulb 7W 2200K</td><td>cct</td><td><span class='pill high'>high</span> Supplier gives cct as &#x27;22000K&#x27;, but it&#x27;s outside the normal 1,000–10,000K range for lighting. Not proposed; check with the supplier.</td><td class='src'>supplier_price_list.xlsx [Price List] · row 21 · Color Temp (K): “22000K”</td></tr>
+</table></div>
+<h3>Protected field: needs human review (3)</h3><div class='wrap'><table><tr><th>Product / SKU</th><th>Field</th><th>Details</th><th>Source</th></tr>
+<tr><td>T8 Tube 4ft LED Bulb 18W 4000K</td><td>voltage</td><td><span class='pill high'>high</span> Store says &#x27;120V&#x27;; supplier file says &#x27;120-277V&#x27; (row 23). &#x27;voltage&#x27; is a protected field, so the tool flags it for a person to check and never proposes a change.</td><td class='src'>supplier_price_list.xlsx [Price List] · row 23 · Voltage: “120-277V”</td></tr>
+<tr><td>PL Retrofit LED Bulb 13W 3500K</td><td>voltage</td><td><span class='pill high'>high</span> Store says &#x27;120V&#x27;; supplier file says &#x27;120-277V&#x27; (row 24). &#x27;voltage&#x27; is a protected field, so the tool flags it for a person to check and never proposes a change.</td><td class='src'>supplier_price_list.xlsx [Price List] · row 24 · Voltage: “120-277V”</td></tr>
+<tr><td>Corn Bulb LED Bulb 36W 5000K</td><td>certification</td><td><span class='pill high'>high</span> Store has no certification. Supplier file says &#x27;UL Listed&#x27; (row 25). &#x27;certification&#x27; is a protected field, so the tool flags it for a person to check and never proposes a change.</td><td class='src'>supplier_price_list.xlsx [Price List] · row 25 · Certification: “UL Listed”</td></tr>
+</table></div>
+<h3>Supplier value unclear (2)</h3><div class='wrap'><table><tr><th>Product / SKU</th><th>Field</th><th>Details</th><th>Source</th></tr>
+<tr><td>B11 Candelabra LED Bulb 5W 3000K</td><td>lumens</td><td><span class='pill medium'>medium</span> Supplier row 19 gives lumens as &#x27;450-500&#x27;, which is a range, not one value, so it can&#x27;t be copied as a fix. Ask the supplier for the exact value.</td><td class='src'>supplier_price_list.xlsx [Price List] · row 19 · Lumens: “450-500”</td></tr>
+<tr><td>G25 Globe LED Bulb 6W 2700K</td><td>lumens</td><td><span class='pill medium'>medium</span> Supplier row 20 gives lumens as &#x27;approx. 500&#x27;, which is an approximate value, so it can&#x27;t be copied as a fix. Ask the supplier for the exact value.</td><td class='src'>supplier_price_list.xlsx [Price List] · row 20 · Lumens: “approx. 500”</td></tr>
+</table></div>
+<h3>Variants disagree on a product-level spec (1)</h3><div class='wrap'><table><tr><th>Product / SKU</th><th>Field</th><th>Details</th><th>Source</th></tr>
+<tr><td>Kestrel Ceiling Fan Light Kit</td><td>base_type</td><td><span class='pill medium'>medium</span> This product&#x27;s variants have different base_type values in the supplier file (row 58 = E26, row 59 = E26, row 60 = E12), but the store keeps base_type once per product. Consider making it a variant option, or check with the supplier.</td><td class='src'>supplier_price_list.xlsx [Price List] · row 58 · Base: “E26”<br>supplier_price_list.xlsx [Price List] · row 59 · Base: “E26”<br>supplier_price_list.xlsx [Price List] · row 60 · Base: “E12”</td></tr>
+</table></div>
+<h3>Required spec missing in store and supplier file (1)</h3><div class='wrap'><table><tr><th>Product / SKU</th><th>Field</th><th>Details</th><th>Source</th></tr>
+<tr><td>A19 Dimmable LED Bulb 9W 2700K</td><td>base_type</td><td><span class='pill medium'>medium</span> base_type is missing in the store, and the supplier file is blank too (row 26). Ask the supplier for it; the tool won&#x27;t guess.</td><td class='src'>supplier_price_list.xlsx [Price List] · row 26 · Base: “”</td></tr>
+</table></div>
+<h3>In store but not in supplier file (3)</h3><div class='wrap'><table><tr><th>Product / SKU</th><th>Field</th><th>Details</th><th>Source</th></tr>
+<tr><td>Legacy Halogen Spot 50W<br><span class='muted small'>SKU EX-OLD-001</span></td><td></td><td><span class='pill low'>low</span> This SKU isn&#x27;t in the supplier file. It may be discontinued, from another supplier, or listed under a different SKU.</td><td class='src'></td></tr>
+<tr><td>Legacy CFL Spiral 13W<br><span class='muted small'>SKU EX-OLD-002</span></td><td></td><td><span class='pill low'>low</span> This SKU isn&#x27;t in the supplier file. It may be discontinued, from another supplier, or listed under a different SKU.</td><td class='src'></td></tr>
+<tr><td>Clearance Edison Bulb<br><span class='muted small'>SKU EX-OLD-003</span></td><td></td><td><span class='pill low'>low</span> This SKU isn&#x27;t in the supplier file. It may be discontinued, from another supplier, or listed under a different SKU.</td><td class='src'></td></tr>
+</table></div>
+<h3>In supplier file but not in store (4)</h3><div class='wrap'><table><tr><th>Product / SKU</th><th>Field</th><th>Details</th><th>Source</th></tr>
+<tr><td>(not in store)<br><span class='muted small'>SKU EX-FX-1104-AB</span></td><td></td><td><span class='pill low'>low</span> This supplier SKU isn&#x27;t in the store. It may be a new product (adding products is out of scope; listed for your information).</td><td class='src'>supplier_price_list.xlsx [Price List] · row 38 · Item #: “EX-FX-1104-AB”</td></tr>
+<tr><td>(not in store)<br><span class='muted small'>SKU EX-NEW-001</span></td><td></td><td><span class='pill low'>low</span> This supplier SKU isn&#x27;t in the store. It may be a new product (adding products is out of scope; listed for your information).</td><td class='src'>supplier_price_list.xlsx [Price List] · row 100 · Item #: “EX-NEW-001”</td></tr>
+<tr><td>(not in store)<br><span class='muted small'>SKU EX-NEW-002</span></td><td></td><td><span class='pill low'>low</span> This supplier SKU isn&#x27;t in the store. It may be a new product (adding products is out of scope; listed for your information).</td><td class='src'>supplier_price_list.xlsx [Price List] · row 101 · Item #: “EX-NEW-002”</td></tr>
+<tr><td>(not in store)<br><span class='muted small'>SKU EX-NEW-003</span></td><td></td><td><span class='pill low'>low</span> This supplier SKU isn&#x27;t in the store. It may be a new product (adding products is out of scope; listed for your information).</td><td class='src'>supplier_price_list.xlsx [Price List] · row 102 · Item #: “EX-NEW-003”</td></tr>
+</table></div>
+<h2>How this check works</h2><ul class='never'><li>Each store SKU is matched to the supplier file. Every mapped spec is compared, along with barcodes, duplicate SKUs and barcodes, units, titles and variant options.</li><li>A fix is proposed <b>only</b> when an exact supplier cell supports it. That cell is shown with its file, row and column.</li><li>Unclear supplier values (ranges, “approx.”, “equivalent”, wrong units) are flagged, never copied.</li><li>Changes you reject are remembered and not proposed again.</li></ul><h2>What we never do</h2><ul class='never'><li>Invent specs, certifications, voltage, compatibility, prices or inventory.</li><li>Log into or write to your store. You approve every change and import it yourself.</li><li>Edit titles, variant options, prices or stock.</li><li>Promise more traffic, ad performance or sales.</li></ul>
+<footer>Tondelweb Catalog · report generated 2026-10-13 · run sample_report</footer></main></body></html>
