@@ -132,3 +132,10 @@
   .svc-row { grid-template-columns: auto 1fr; }
   .svc-row .st { grid-column: 2; }
 }
+
+/* ---------- legal tables ---------- */
+.prose .table-wrap { overflow-x: auto; margin: 16px 0; border: 1px solid var(--line); border-radius: 12px; }
+.prose table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+.prose th, .prose td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); color: var(--muted); }
+.prose th { color: var(--text); background: rgba(255,255,255,0.03); }
+.prose ul ul { margin: 6px 0; }
