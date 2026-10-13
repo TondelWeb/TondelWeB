@@ -3,36 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tondelweb Catalog: Supplier-file checks for Shopify catalogs</title>
-<meta name="description" content="We compare your suppliers' spreadsheets with your Shopify catalog and send you fixes, each backed by the exact supplier row. You approve and import. We never touch your store.">
-<meta property="og:title" content="Tondelweb Catalog: catch catalog errors before your customers do">
-<meta property="og:description" content="Supplier-file checks for Shopify lighting stores. Every fix is backed by the exact supplier row. A 100-SKU audit is $250.">
+<title>Tondelweb: careful work for small businesses</title>
+<meta name="description" content="Tondelweb runs four small services: supplier-file checks for Shopify catalogs, lead-form monitoring for agencies, government cleaning-bid alerts for Texas contractors, and custom websites.">
+<meta property="og:title" content="Tondelweb: careful work for small businesses">
+<meta property="og:description" content="Tondelweb runs four small services: supplier-file checks for Shopify catalogs, lead-form monitoring for agencies, government cleaning-bid alerts for Texas contractors, and custom websites.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tondelweb.com/">
 <meta property="og:image" content="https://tondelweb.com/TondelWeb%20Logo%20Favicon.png">
 <meta name="theme-color" content="#0b0b0c">
-<link rel="icon" type="image/png" href="TondelWeb Logo Favicon.png">
+<link rel="icon" type="image/png" href="/TondelWeb%20Logo%20Favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/hub.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
+<!-- ============ SHARED HEADER (same on every Tondelweb page) ============ -->
 <header class="nav" id="nav">
   <div class="wrap nav-inner">
-    <a class="brand" href="#top" aria-label="Tondelweb Catalog home">
-      <img src="TondelWeb Logo Favicon.png" alt="" width="34" height="34">
-      <span>Tondelweb <em>Catalog</em></span>
+    <a class="brand" href="/" aria-label="Tondelweb home">
+      <img src="/TondelWeb%20Logo%20Favicon.png" alt="" width="34" height="34">
+      <span>Tondelweb</span>
     </a>
     <nav class="nav-links" id="nav-links" aria-label="Main">
-      <a href="#how">How it works</a>
-      <a href="#catch">What we catch</a>
-      <a href="#proof">Proof</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
-      <a class="btn btn-sm btn-accent" href="#contact">Get in touch</a>
+      <a href="/catalog/">Catalog</a>
+      <a href="/forms/">Forms</a>
+      <a href="/bids/">Bids</a>
+      <a href="/websites/">Websites</a>
+      <a href="/pay/">Pay</a>
+      <a class="btn btn-sm btn-accent" href="/contact/">Get in touch</a>
     </nav>
     <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
       <span></span><span></span>
@@ -47,290 +49,157 @@
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="wrap hero-inner">
     <div class="hero-copy">
-      <p class="eyebrow"><span class="dot"></span>Catalog checks for Shopify lighting stores</p>
+      <p class="eyebrow"><span class="dot"></span>Tondelweb · Blacksburg, Virginia</p>
       <h1 class="hero-title">
-        <span class="line"><span>Catch catalog</span></span>
-        <span class="line"><span>errors before</span></span>
-        <span class="line"><span><i>customers</i> do.</span></span>
+        <span class="line"><span>Careful work</span></span>
+        <span class="line"><span>for small</span></span>
+        <span class="line"><span><i>businesses.</i></span></span>
       </h1>
-      <p class="hero-sub">Your supplier sends a new spreadsheet. We compare it with your Shopify catalog and hand you a list of fixes, <strong>every one backed by the exact supplier row it came from</strong>. You approve. You import. We never touch your store.</p>
+      <p class="hero-sub">Tondelweb builds custom websites and runs three focused checking services: for Shopify catalogs, for law-firm lead forms, and for government cleaning bids. <strong>Fixed prices, written scope, and proof with every result.</strong></p>
       <div class="hero-cta">
-        <a class="btn btn-accent btn-lg" href="https://buy.stripe.com/5kQ4gy2HVbFo3M6fEf6kg02">Start a $250 audit <span aria-hidden="true">→</span></a>
-        <a class="btn btn-ghost btn-lg" href="sample-report.html" target="_blank" rel="noopener">See a sample report</a>
+        <a class="btn btn-accent btn-lg" href="#services">See the services <span aria-hidden="true">↓</span></a>
+        <a class="btn btn-ghost btn-lg" href="/contact/">Get in touch</a>
       </div>
       <ul class="hero-points">
-        <li>100 SKUs checked in 5 business days</li>
-        <li>Full refund if we find fewer than 5 real issues</li>
+        <li>Small paid trials, so you can judge us cheaply</li>
+        <li>Monthly plans you can cancel yourself</li>
       </ul>
     </div>
 
-    <div class="console" id="console" aria-label="Animated example of a catalog check">
+    <div class="console svc-console" aria-label="The four Tondelweb services">
       <div class="console-bar">
         <span class="lights"><i></i><i></i><i></i></span>
-        <span class="console-title">catalog-check <b id="console-status">running</b></span>
-        <span class="console-tag">example data</span>
+        <span class="console-title">tondelweb <b>services</b></span>
+        <span class="console-tag">4 services</span>
       </div>
       <div class="console-body">
-        <div class="console-meta">
-          <span id="c-sku">SKU EX-BL-0102</span>
-          <span id="c-product">A19 LED Bulb 11W 2700K</span>
-        </div>
-        <div class="diff">
-          <div class="diff-head"><span>Field</span><span>Supplier file</span><span>Your store</span></div>
-          <div class="diff-row" id="c-row">
-            <span class="f" id="c-field">Lumens</span>
-            <span class="v sup" id="c-sup">1100</span>
-            <span class="v store" id="c-store">(blank)</span>
-          </div>
-          <div class="scan" id="c-scan" aria-hidden="true"></div>
-        </div>
-        <div class="fix" id="c-fix">
-          <div class="fix-label" id="c-fix-label">Proposed fix</div>
-          <div class="fix-value"><span class="old" id="c-old">(blank)</span><span class="arrow">→</span><span class="new" id="c-new">1100</span></div>
-          <div class="fix-src">source: <span id="c-src">price_list.xlsx · row 14 · column "Lumens" · "1100"</span></div>
-        </div>
-        <div class="console-foot">
-          <span><b id="c-count">0</b> issues found</span>
-          <span><b id="c-fixes">0</b> fixes proposed</span>
-          <span class="ok">0 without a source</span>
-        </div>
+        <a class="svc-row" href="/catalog/"><span class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="13" height="17" rx="2"/><path d="M8 8h6M8 12h6M8 16h3"/><path d="M15 17l2 2 4-4"/></svg></span><span><b>Catalog</b><small>Shopify supplier-file checks</small></span><span class="st">source cited</span></a>
+        <a class="svc-row" href="/forms/"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span><b>Forms</b><small>Lead-form monitoring for agencies</small></span><span class="st">email arrived</span></a>
+        <a class="svc-row" href="/bids/"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/><path d="M8.5 11l2 2 3.5-3.5"/></svg></span><span><b>Bids</b><small>Texas cleaning-bid digest</small></span><span class="st">3 matches</span></a>
+        <a class="svc-row" href="/websites/"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14l-2 2 2 2M16 14l2 2-2 2"/></svg></span><span><b>Websites</b><small>Custom sites, built by hand</small></span><span class="st">live</span></a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ MARQUEE ============ -->
-<section class="marquee" aria-label="Problems we catch">
-  <div class="marquee-track">
-    <ul>
-      <li>Missing lumens</li><li>Title says 3000K, specs say 4000K</li><li>Duplicate SKUs</li>
-      <li>Invalid barcodes</li><li>"60W equivalent" in the wattage field</li><li>mm vs inches</li>
-      <li>Excel-mangled UPCs (8.4E+11)</li><li>Variant option conflicts</li><li>Copy-paste listings</li>
-    </ul>
-    <ul aria-hidden="true">
-      <li>Missing lumens</li><li>Title says 3000K, specs say 4000K</li><li>Duplicate SKUs</li>
-      <li>Invalid barcodes</li><li>"60W equivalent" in the wattage field</li><li>mm vs inches</li>
-      <li>Excel-mangled UPCs (8.4E+11)</li><li>Variant option conflicts</li><li>Copy-paste listings</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ============ PROBLEM ============ -->
-<section class="section problem">
-  <div class="wrap two-col">
-    <div class="reveal">
-      <p class="kicker">The problem</p>
-      <h2>Every new spec sheet is a new chance to publish a mistake.</h2>
-    </div>
-    <div class="problem-list">
-      <div class="p-item reveal"><span class="p-num">01</span><div><h3>Supplier files change constantly</h3><p>New wattages, new barcodes, new SKUs. Someone has to compare them line by line against what's live.</p></div></div>
-      <div class="p-item reveal"><span class="p-num">02</span><div><h3>Sync apps move data. They don't check it.</h3><p>Copying a supplier's numbers into Shopify is easy. Spotting when they contradict your titles, options and other listings isn't.</p></div></div>
-      <div class="p-item reveal"><span class="p-num">03</span><div><h3>Wrong specs get noticed, by the wrong people</h3><p>A bulb listed as 3000K that arrives at 4000K means a return, a bad review, or a feed disapproval.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ HOW ============ -->
-<section class="section how" id="how">
+<!-- ============ SERVICES ============ -->
+<section class="section" id="services">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="kicker">How it works</p>
-      <h2>Three steps. No logins. No surprises.</h2>
+      <p class="kicker">Services</p>
+      <h2>Four services. One careful studio.</h2>
+      <p class="lead">Each one does one job well, has a fixed price, and starts small.</p>
     </div>
-    <div class="steps" id="steps">
-      <svg class="steps-line" viewBox="0 0 1000 4" preserveAspectRatio="none" aria-hidden="true"><path id="steps-path" d="M0 2 H1000"/></svg>
-      <article class="step reveal">
-        <div class="step-icon" aria-hidden="true">
-          <svg viewBox="0 0 48 48"><rect x="9" y="6" width="22" height="30" rx="3"/><rect x="17" y="12" width="22" height="30" rx="3"/><path d="M22 22h12M22 28h12M22 34h8"/></svg>
-        </div>
-        <span class="step-n">Step 1</span>
-        <h3>Send two files</h3>
-        <p>Your supplier's latest spreadsheet and a Shopify product export (Products → Export). Takes five minutes.</p>
+    <div class="svc-grid">
+      <article class="card svc-card reveal" data-tilt>
+        <span class="tag">For Shopify lighting stores</span>
+        <h3>Tondelweb <em>Catalog</em></h3>
+        <p>We compare your suppliers' spreadsheets with your Shopify catalog and send fixes, each backed by the exact supplier row. You approve and import. We never touch your store.</p>
+        <p class="svc-price">$250 audit · then $399/month</p>
+        <div class="svc-actions"><a class="link-arrow" href="/catalog/">How it works <span aria-hidden="true">→</span></a><a class="btn btn-sm btn-ghost" href="https://buy.stripe.com/5kQ4gy2HVbFo3M6fEf6kg02" data-link="pay.catalog_audit" data-ready-text="Start an audit" data-missing-text="Ask about an audit">Start an audit</a></div>
       </article>
-      <article class="step reveal">
-        <div class="step-icon" aria-hidden="true">
-          <svg viewBox="0 0 48 48"><circle cx="21" cy="21" r="12"/><path d="M30 30l10 10"/><path d="M15 21l4 4 8-8"/></svg>
-        </div>
-        <span class="step-n">Step 2</span>
-        <h3>Get a source-backed report</h3>
-        <p>Every problem we found, with the supplier file, row and cell behind each proposed fix. In 2 business days (audits: 5).</p>
+      <article class="card svc-card reveal" data-tilt>
+        <span class="tag">For agencies that run law-firm WordPress sites</span>
+        <h3>Tondelweb <em>Forms</em></h3>
+        <p>We test-submit one agreed form per site every 4 hours and confirm the lead email really arrived. When it didn't, you get an alert with proof, before the client notices.</p>
+        <p class="svc-price">$150 pilot (5 sites, 30 days) · then $199/month</p>
+        <div class="svc-actions"><a class="link-arrow" href="/forms/">How it works <span aria-hidden="true">→</span></a><a class="btn btn-sm btn-ghost is-missing" href="/contact/?service=forms" data-link="pay.forms_pilot" data-ready-text="Start a pilot" data-missing-text="Ask about a pilot">Ask about a pilot</a></div>
       </article>
-      <article class="step reveal">
-        <div class="step-icon" aria-hidden="true">
-          <svg viewBox="0 0 48 48"><rect x="7" y="9" width="34" height="30" rx="4"/><path d="M15 24l6 6 12-12"/></svg>
-        </div>
-        <span class="step-n">Step 3</span>
-        <h3>Approve and import</h3>
-        <p>Write yes or no next to each fix. You get one import file with only your yeses. Import it in two minutes.</p>
+      <article class="card svc-card reveal" data-tilt>
+        <span class="tag">For Texas commercial cleaning companies</span>
+        <h3>Tondelweb <em>Bids</em></h3>
+        <p>A weekly digest of government cleaning bids, screened against your travel radius, insurance and set-aside status. Dealbreakers are flagged, with the line they're on.</p>
+        <p class="svc-price">$49 two-week trial · then $149/month</p>
+        <div class="svc-actions"><a class="link-arrow" href="/bids/">How it works <span aria-hidden="true">→</span></a><a class="btn btn-sm btn-ghost is-missing" href="/contact/?service=bids" data-link="pay.bids_trial" data-ready-text="Start a trial" data-missing-text="Ask about a trial">Ask about a trial</a></div>
+      </article>
+      <article class="card svc-card reveal" data-tilt>
+        <span class="tag">For any small business</span>
+        <h3>Custom <em>websites</em></h3>
+        <p>Custom-built websites, Shopify stores, landing pages and Google Ads management. Designed and coded by hand, with clean code and conversion-focused design.</p>
+        <p class="svc-price">Quote-based</p>
+        <div class="svc-actions"><a class="link-arrow" href="/websites/">See our work <span aria-hidden="true">→</span></a><a class="btn btn-sm btn-ghost" href="/contact/?service=websites">Get a quote</a></div>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ============ CATCH ============ -->
-<section class="section catch" id="catch">
+<!-- ============ PRINCIPLES ============ -->
+<section class="section how">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="kicker">What we catch</p>
-      <h2>The mistakes that slip through spreadsheets.</h2>
-      <p class="lead">Built around lighting: watts, lumens, color temperature, CRI, base types, dimensions and barcodes.</p>
+      <p class="kicker">How we work</p>
+      <h2>The same rules for every service.</h2>
     </div>
-    <div class="cards">
-      <article class="card reveal" data-tilt>
-        <h3>Missing specs</h3><p>Lumens, color temperature or base type left blank, when the supplier file has the value.</p>
-        <div class="chip-row"><span class="chip bad">Lumens: blank</span><span class="chip good">→ 800</span></div>
-      </article>
-      <article class="card reveal" data-tilt>
-        <h3>Contradictions</h3><p>The title says one thing, the spec table or variant option says another.</p>
-        <div class="chip-row"><span class="chip bad">Title: 3000K</span><span class="chip warn">Specs: 4000K</span></div>
-      </article>
-      <article class="card reveal" data-tilt>
-        <h3>Duplicate SKUs</h3><p>Two different products, or a "(Copy)" listing, sharing one SKU and confusing your stock.</p>
-        <div class="chip-row"><span class="chip bad">SKU 11571 × 2</span></div>
-      </article>
-      <article class="card reveal" data-tilt>
-        <h3>Broken barcodes</h3><p>Wrong check digits, dropped leading zeros, and UPCs that Excel turned into 8.4E+11.</p>
-        <div class="chip-row"><span class="chip bad">…4449 ✕</span><span class="chip good">→ …4446 ✓</span></div>
-      </article>
-      <article class="card reveal" data-tilt>
-        <h3>Unit mix-ups</h3><p>Millimeters in an inches field. "60W equivalent" where the real wattage belongs.</p>
-        <div class="chip-row"><span class="chip bad">"60W equivalent"</span><span class="chip good">→ 9</span></div>
-      </article>
-      <article class="card reveal" data-tilt>
-        <h3>Implausible values</h3><p>22000K, or 900 lumens per watt. We flag typos that no real product could have.</p>
-        <div class="chip-row"><span class="chip warn">22000K?</span></div>
-      </article>
+    <div class="principles">
+      <div class="principle reveal"><span class="p-num">01</span><h3>Proof with every result</h3><p>A supplier row, a screenshot, or the quoted line from the notice. If we can't show where it came from, we don't send it.</p></div>
+      <div class="principle reveal"><span class="p-num">02</span><h3>We stay out of your systems</h3><p>Catalog never logs into your store. Forms never logs into your sites. You approve every change.</p></div>
+      <div class="principle reveal"><span class="p-num">03</span><h3>Fixed scope, fixed price</h3><p>Every plan says exactly what's included. Audits, pilots and trials are small on purpose.</p></div>
+      <div class="principle reveal"><span class="p-num">04</span><h3>Cancel anytime</h3><p>Monthly plans run month to month. Cancel from the billing portal or with one email.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ============ PROOF ============ -->
-<section class="section proof" id="proof">
-  <div class="wrap two-col proof-grid">
-    <div class="reveal">
-      <p class="kicker">Proof, not promises</p>
-      <h2>Every fix comes with its receipt.</h2>
-      <p class="lead">No guesses. If the supplier file doesn't state a value, we flag it for you instead of filling it in. Each proposed fix shows exactly where it came from, so you can check it in seconds.</p>
-      <div class="stats">
-        <div class="stat"><b data-count="42">0</b><span>of 42 planted errors caught on our test catalog</span></div>
-        <div class="stat"><b data-count="0" data-zero>0</b><span>fixes proposed without a source</span></div>
-      </div>
-      <p class="fine">Test catalog: 99 invented SKUs with 42 deliberately planted problems.</p>
-      <a class="btn btn-ghost" href="sample-report.html" target="_blank" rel="noopener">Open the sample report <span aria-hidden="true">↗</span></a>
-    </div>
-    <div class="receipt reveal">
-      <div class="receipt-head"><span>Proposed fix</span><span class="pill">high</span></div>
-      <dl>
-        <div><dt>Product</dt><dd>MR16 LED Bulb 6W 3000K</dd></div>
-        <div><dt>Field</dt><dd>Barcode</dd></div>
-        <div><dt>Now</dt><dd class="strike">200000004449</dd></div>
-        <div><dt>Proposed</dt><dd class="accent">200000004446</dd></div>
-        <div><dt>Why</dt><dd>The last digit doesn't match the others, so it was mistyped. The supplier's barcode is valid.</dd></div>
-        <div class="src"><dt>Source</dt><dd><code>price_list.xlsx · row 15 · UPC · "200000004446"</code></dd></div>
-      </dl>
-      <div class="receipt-foot"><span>approve:</span><span class="yn"><b>yes</b> / no</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ NEVER ============ -->
-<section class="section never">
+<!-- ============ BOOK ============ -->
+<section class="section" id="book">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="kicker">Our rules</p>
-      <h2>What we never do.</h2>
+      <p class="kicker">Talk first</p>
+      <h2>Book a 15-minute call.</h2>
+      <p class="lead">Pick the service you want to talk about. No slides, no pressure: we look at your situation and tell you honestly whether we can help.</p>
     </div>
-    <ul class="never-list">
-      <li class="reveal"><span aria-hidden="true">✕</span>Invent specs, certifications, voltage, compatibility, prices or inventory</li>
-      <li class="reveal"><span aria-hidden="true">✕</span>Log into your store or change anything ourselves</li>
-      <li class="reveal"><span aria-hidden="true">✕</span>Edit your titles, prices, stock or variant options</li>
-      <li class="reveal"><span aria-hidden="true">✕</span>Promise you more traffic or sales</li>
-    </ul>
+    <div class="book-grid reveal">
+      <a class="btn btn-ghost is-missing" href="/contact/?service=catalog" data-link="booking.catalog" data-ready-text="Catalog call" data-missing-text="Catalog: ask for a call">Catalog: ask for a call</a>
+      <a class="btn btn-ghost is-missing" href="/contact/?service=forms" data-link="booking.forms" data-ready-text="Forms call" data-missing-text="Forms: ask for a call">Forms: ask for a call</a>
+      <a class="btn btn-ghost is-missing" href="/contact/?service=bids" data-link="booking.bids" data-ready-text="Bids call" data-missing-text="Bids: ask for a call">Bids: ask for a call</a>
+      <a class="btn btn-ghost is-missing" href="/contact/?service=websites" data-link="booking.websites" data-ready-text="Website call" data-missing-text="Websites: ask for a call">Websites: ask for a call</a>
+    </div>
   </div>
 </section>
 
-<!-- ============ PRICING ============ -->
-<section class="section pricing" id="pricing">
+<section class="section" style="padding-top:0">
   <div class="wrap">
-    <div class="section-head reveal">
-      <p class="kicker">Pricing</p>
-      <h2>Start small. Keep it clean.</h2>
+    <div class="cta-band reveal">
+      <h2>Not sure which one fits? Just ask.</h2>
+      <div class="hero-cta"><a class="btn btn-accent btn-lg" href="/contact/">Get in touch <span aria-hidden="true">→</span></a><a class="btn btn-ghost btn-lg" href="/pay/">Pay an invoice</a></div>
     </div>
-    <div class="plans">
-      <article class="plan reveal">
-        <p class="plan-name">Catalog audit</p>
-        <p class="price"><b>$250</b><span>one-time</span></p>
-        <ul>
-          <li>100 SKUs checked against one supplier file</li>
-          <li>Report, proposed fixes and import file</li>
-          <li>15-minute walkthrough call</li>
-          <li>Delivered in 5 business days</li>
-          <li><strong>Fewer than 5 real issues? Full refund.</strong></li>
-        </ul>
-        <a class="btn btn-accent btn-block" href="https://buy.stripe.com/5kQ4gy2HVbFo3M6fEf6kg02">Start an audit <span aria-hidden="true">→</span></a>
-      </article>
-      <article class="plan plan-featured reveal">
-        <p class="plan-name">Weekly check</p>
-        <p class="price"><b>$399</b><span>/ month</span></p>
-        <ul>
-          <li>1 supplier, 1 store, up to 1,000 SKUs</li>
-          <li>Up to 50 changes a week</li>
-          <li>Report within 2 business days of each file</li>
-          <li>History of every accepted and rejected change</li>
-          <li>Cancel anytime</li>
-        </ul>
-        <a class="btn btn-ghost btn-block" href="#contact">Talk to us first</a>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FAQ ============ -->
-<section class="section faq" id="faq">
-  <div class="wrap faq-wrap">
-    <div class="section-head reveal">
-      <p class="kicker">FAQ</p>
-      <h2>Questions, answered.</h2>
-    </div>
-    <div class="faq-list">
-      <details class="reveal"><summary>Do you need access to my Shopify store?</summary><div class="ans"><p>No. You export your products (Products → Export) and import our file (Products → Import). You stay in full control.</p></div></details>
-      <details class="reveal"><summary>What happens to my files?</summary><div class="ans"><p>They're kept in one encrypted folder, processed with AI-assisted tools under our written data terms, and deleted within 30 days after we stop working together. We only need product data, never customer or order data.</p></div></details>
-      <details class="reveal"><summary>What if a proposed fix is wrong?</summary><div class="ans"><p>Every fix shows its source, so you can check it in seconds. If a fix we deliver isn't supported by the supplier file, we correct it within one business day at no charge.</p></div></details>
-      <details class="reveal"><summary>We already use an app to sync supplier feeds.</summary><div class="ans"><p>Keep it. Sync apps move data into your store. We check that data, with the source for every fix, so mistakes don't go live.</p></div></details>
-      <details class="reveal"><summary>Is this only for lighting?</summary><div class="ans"><p>We started with lighting because its specs (watts, lumens, color temperature, base type, dimensions) can be checked precisely. If you sell another spec-heavy product line, get in touch.</p></div></details>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CONTACT ============ -->
-<section class="section contact" id="contact">
-  <div class="wrap two-col">
-    <div class="reveal">
-      <p class="kicker">Get in touch</p>
-      <h2>Tell us about your catalog.</h2>
-      <p class="lead">How many SKUs, how many suppliers, and how often their files change. We'll reply within one business day.</p>
-      <a class="btn btn-accent" href="https://buy.stripe.com/5kQ4gy2HVbFo3M6fEf6kg02">Or start an audit now <span aria-hidden="true">→</span></a>
-    </div>
-    <form class="form reveal" id="contact-form" action="https://formspree.io/f/xjgdnoka" method="POST" novalidate>
-      <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
-      <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
-      <div class="field"><label for="f-store">Store website</label><input id="f-store" name="store" type="url" placeholder="https://" inputmode="url"></div>
-      <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" rows="4" required></textarea></div>
-      <button class="btn btn-accent btn-block" type="submit" id="f-submit">Send message</button>
-      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-    </form>
   </div>
 </section>
 </main>
 
-<footer class="footer">
-  <div class="wrap footer-inner">
-    <a class="brand" href="#top"><img src="TondelWeb Logo Favicon.png" alt="" width="28" height="28"><span>Tondelweb <em>Catalog</em></span></a>
-    <p>Supplier-file checks for Shopify catalogs. A Tondelweb business.</p>
+<!-- ============ SHARED FOOTER (same on every Tondelweb page) ============ -->
+<footer class="footer site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="/"><img src="/TondelWeb%20Logo%20Favicon.png" alt="" width="28" height="28"><span>Tondelweb</span></a>
+        <p>Careful work for small businesses. A sole proprietorship based in Blacksburg, Virginia.</p>
+      </div>
+      <nav aria-label="Services">
+        <h4>Services</h4>
+        <a href="/catalog/">Tondelweb Catalog</a>
+        <a href="/forms/">Tondelweb Forms</a>
+        <a href="/bids/">Tondelweb Bids</a>
+        <a href="/websites/">Custom websites</a>
+      </nav>
+      <nav aria-label="Company">
+        <h4>Company</h4>
+        <a href="/pay/">Pay</a>
+        <a href="/contact/">Contact</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+      </nav>
+      <div class="foot-contact">
+        <h4>Contact</h4>
+        <a href="mailto:Lucas.Lagido@gmail.com">Lucas.Lagido@gmail.com</a>
+        <p>Replies within one business day.</p>
+      </div>
+    </div>
     <p class="copy">© <span id="year">2026</span> Tondelweb</p>
   </div>
 </footer>
 
-<script src="assets/site.js" defer></script>
+<script src="/assets/links.js" defer></script>
+<script src="/assets/site.js" defer></script>
+<script src="/assets/hub.js" defer></script>
 </body>
 </html>
