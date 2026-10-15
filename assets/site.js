@@ -1,4 +1,4 @@
-/* Tondelweb Catalog: site interactions */
+/* Tondelweb: site interactions */
 (function () {
   "use strict";
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -240,7 +240,7 @@
         email: form.email.value,
         store: (function (v) { v = v.trim(); return v && !/^https?:\/\//i.test(v) ? "https://" + v : v; })(form.store.value),
         message: form.message.value,
-        _subject: "New Tondelweb Catalog inquiry"
+        _subject: "New Tondelweb inquiry"
       };
       btn.disabled = true;
       btn.textContent = "Sending…";
